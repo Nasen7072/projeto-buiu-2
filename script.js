@@ -24,6 +24,8 @@ const toggleThemeButton = document.getElementById('toggle-theme');
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
     toggleThemeButton.textContent = 'Modo Claro';
+} else {
+    toggleThemeButton.textContent = 'Modo Escuro';
 }
 
 // Função para alternar o tema
