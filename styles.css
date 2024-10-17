@@ -1,3 +1,31 @@
+/* Tema Claro (padrão) */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg-color: #3b5998;
+    --header-text-color: white;
+    --button-bg-color: rgba(0, 0, 0, 0.5);
+    --button-text-color: white;
+    --submit-bg-color: #3b5998;
+    --submit-hover-bg-color: #2a4271;
+    --footer-bg-color: #333;
+    --footer-text-color: white;
+}
+
+/* Tema Escuro */
+body.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: #eaeaea;
+    --header-bg-color: #222;
+    --header-text-color: #f4f4f4;
+    --button-bg-color: rgba(255, 255, 255, 0.5);
+    --button-text-color: black;
+    --submit-bg-color: #444;
+    --submit-hover-bg-color: #666;
+    --footer-bg-color: #111;
+    --footer-text-color: #f4f4f4;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +34,14 @@
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #3b5998;
-    color: white;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
     padding: 2rem;
     text-align: center;
 }
@@ -51,8 +80,8 @@ button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     border: none;
     padding: 1rem;
     cursor: pointer;
@@ -81,7 +110,7 @@ input, textarea {
 }
 
 button[type="submit"] {
-    background-color: #3b5998;
+    background-color: var(--submit-bg-color);
     color: white;
     border: none;
     padding: 0.75rem;
@@ -89,13 +118,30 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #2a4271;
+    background-color: var(--submit-hover-bg-color);
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
     padding: 1rem;
     text-align: center;
     margin-top: 2rem;
+}
+
+/* Botão para alternar o tema */
+#toggle-theme {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--submit-bg-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#toggle-theme:hover {
+    background-color: var(--submit-hover-bg-color);
 }
