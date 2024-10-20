@@ -1,14 +1,21 @@
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+const toggleThemeButton = document.getElementById('toggle-theme');
 
-// Função para alternar slides
-document.querySelector('.next').addEventListener('click', () => {
-    changeSlide(1);
-});
+// Verifica se os elementos existem antes de adicionar ouvintes de eventos
+if (nextButton) {
+    nextButton.addEventListener('click', () => {
+        changeSlide(1);
+    });
+}
 
-document.querySelector('.prev').addEventListener('click', () => {
-    changeSlide(-1);
-});
+if (prevButton) {
+    prevButton.addEventListener('click', () => {
+        changeSlide(-1);
+    });
+}
 
 function changeSlide(direction) {
     currentSlide = (currentSlide + direction + slides.length) % slides.length;
@@ -16,9 +23,6 @@ function changeSlide(direction) {
         slide.style.transform = `translateX(${100 * (index - currentSlide)}%)`;
     });
 }
-
-// Alternância de Tema (Claro <-> Escuro)
-const toggleThemeButton = document.getElementById('toggle-theme');
 
 // Verifica o tema armazenado no localStorage ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,14 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Função para alternar o tema
-toggleThemeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    
-    if (document.body.classList.contains('dark-mode')) {
-        toggleThemeButton.textContent = 'Modo Claro';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        toggleThemeButton.textContent = 'Modo Escuro';
-        localStorage.setItem('theme', 'light');
-    }
-});
+if (toggleThemeButton) {
+    toggleThemeButton.addEventListener('click', () => {
+        const isDarkMode = document.body.classList.toggle('dark-mode');
+        toggleThemeButton.textContent = isDarkMode ? 'Modo Claro' : 'Modo Escuro';
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+}
