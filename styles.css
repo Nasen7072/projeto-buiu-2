@@ -1,38 +1,45 @@
+/* Estilos para o modo claro */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: white;
+    color: black;
 }
 
-header {
-    background-color: #1E3A5F; /* Azul Marinho */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-section {
-    background-color: #1E3A5F; /* Azul Marinho */
-    color: white;
-    padding: 20px;
-    margin: 10px;
+header, section {
+    background-color: #f0f0f0; /* Cor de fundo para o modo claro */
+    color: black; /* Cor do texto para o modo claro */
 }
 
 footer {
-    background-color: #1A2530; /* Azul Marinho mais escuro */
-    color: white;
-    text-align: center;
-    padding: 10px;
+    background-color: #d0d0d0; /* Cor do fundo do footer para o modo claro */
+    color: black; /* Cor do texto do footer para o modo claro */
 }
 
 button {
     background-color: #007BFF; /* Azul */
     color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilos para o modo escuro */
+.dark-mode {
+    background-color: #1E3A5F; /* Azul Marinho */
+    color: white;
+}
+
+.dark-mode header, .dark-mode section {
+    background-color: #1E3A5F; /* Azul Marinho */
+    color: white;
+}
+
+.dark-mode footer {
+    background-color: #1A2530; /* Azul Marinho mais escuro */
+    color: white;
+}
+
+.dark-mode button {
+    background-color: #0056b3; /* Azul mais escuro para o modo escuro */
+    color: white;
 }
