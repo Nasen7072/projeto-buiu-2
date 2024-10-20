@@ -1,22 +1,51 @@
-/* Estilos para o modo claro */
-body {
-    background-color: white;
-    color: black;
+/* Reset básico para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header, section {
-    background-color: #f0f0f0; /* Cor de fundo para o modo claro */
-    color: black; /* Cor do texto para o modo claro */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* Cor de fundo padrão */
+    color: black; /* Cor do texto padrão */
+}
+
+header {
+    background-color: #1E3A5F; /* Azul Marinho */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    background-color: #f9f9f9; /* Cor de fundo para o modo claro */
+    color: black; 
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 footer {
-    background-color: #d0d0d0; /* Cor do fundo do footer para o modo claro */
-    color: black; /* Cor do texto do footer para o modo claro */
+    background-color: #d0d0d0; /* Cor do fundo do footer */
+    color: black; /* Cor do texto do footer */
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px; /* Espaço acima do footer */
+    position: relative; /* Para poder controlar a posição se necessário */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve acima do footer */
 }
 
 button {
     background-color: #007BFF; /* Azul */
     color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Bordas arredondadas no botão */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
 button:hover {
@@ -35,11 +64,34 @@ button:hover {
 }
 
 .dark-mode footer {
-    background-color: #1A2530; /* Azul Marinho mais escuro */
-    color: white;
+    background-color: #555; /* Cinza mais escuro para o footer no modo escuro */
+    color: white; /* Cor do texto no footer no modo escuro */
 }
 
 .dark-mode button {
     background-color: #0056b3; /* Azul mais escuro para o modo escuro */
     color: white;
+}
+
+/* Adicionando um estilo ao título das seções */
+h2 {
+    margin-bottom: 15px; /* Espaço abaixo dos títulos das seções */
+    font-size: 24px; /* Tamanho da fonte do título */
+}
+
+/* Estilo para o carousel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transição suave ao mudar de slide */
+}
+
+.slide {
+    min-width: 100%; /* Cada slide ocupa 100% da largura do contêiner */
+    border-radius: 8px; /* Bordas arredondadas nas imagens */
 }
