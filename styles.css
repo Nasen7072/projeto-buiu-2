@@ -1,63 +1,70 @@
-/* Tema Claro (padrão) */
-:root {
-    --bg-color: #f4f4f4;
-    --text-color: #333;
-    --header-bg-color: #3b5998;
-    --header-text-color: white;
-    --button-bg-color: rgba(0, 0, 0, 0.5);
-    --button-text-color: white;
-    --submit-bg-color: #3b5998;
-    --submit-hover-bg-color: #2a4271;
-    --footer-bg-color: #333;
-    --footer-text-color: white;
-}
-
-/* Tema Escuro */
-body.dark-mode {
-    --bg-color: #1e1e1e;
-    --text-color: #eaeaea;
-    --header-bg-color: #222;
-    --header-text-color: #f4f4f4;
-    --button-bg-color: rgba(255, 255, 255, 0.5);
-    --button-text-color: black;
-    --submit-bg-color: #444;
-    --submit-hover-bg-color: #666;
-    --footer-bg-color: #111;
-    --footer-text-color: #f4f4f4;
-}
-
-/* Estilo Global */
+/* Estilos globais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #f4f4f4;
+    color: #002366; /* Azul marinho */
+    line-height: 1.6;
+    padding: 20px;
 }
 
+/* Tema escuro */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4; /* Cor clara no modo escuro */
+}
+
+/* Inputs e Textareas no modo escuro */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #555;
+    color: #f4f4f4;
+    border: 1px solid #888; /* Borda mais clara */
+}
+
+body.dark-mode button {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
+/* Estilos para o botão de tema */
+#toggle-theme {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#toggle-theme:hover {
+    background-color: #555;
+}
+
+/* Estilos do cabeçalho */
 header {
-    background-color: var(--header-bg-color);
-    color: var(--header-text-color);
-    padding: 2rem;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-section {
-    padding: 2rem;
-    text-align: center;
+header h1 {
+    font-size: 2.5rem;
+    color: #002366; /* Azul marinho */
 }
 
-h1, h2 {
-    margin-bottom: 1rem;
-}
-
-p {
-    margin-bottom: 1.5rem;
+header p {
+    font-size: 1.2rem;
+    color: #002366; /* Azul marinho */
 }
 
 /* Estilos do menu de navegação */
@@ -65,41 +72,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #002366; /* Azul marinho */
-    padding: 10px 20px;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-list li {
-    position: relative; /* Necessário para o submenu */
-}
-
-.nav-list li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-/* Estilos do submenu (cascata) */
-.dropdown {
-    display: none; /* Oculto por padrão */
-    position: absolute;
-    top: 100%; /* Alinha abaixo do item pai */
-    left: 0;
-    background-color: #002366;
-    list-style: none;
-    padding: 10px 0;
-    border-radius: 5px;
-    z-index: 10; /* Coloca o submenu acima do restante */
-}
-
-.nav-list li:hover .dropdown {
-    display: block; /* Mostra o submenu ao passar o mouse */
+    padding: 10px;
+    background-color: #fff;
 }
 
 .menu-toggle {
@@ -111,95 +85,180 @@ p {
 .bar {
     height: 3px;
     width: 25px;
-    background-color: #fff;
+    background-color: #002366; /* Azul marinho */
     margin: 4px 0;
 }
 
-/* Estilos responsivos */
+/* Estilos da lista de navegação */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li {
+    position: relative; /* Necessário para o submenu */
+}
+
+.nav-list li a {
+    color: #002366; /* Azul marinho */
+    text-decoration: none;
+}
+
+/* Estilos do submenu (cascata) */
+.dropdown {
+    display: none; /* Oculto por padrão */
+    position: absolute;
+    top: 100%; /* Alinha abaixo do item pai */
+    left: 0;
+    background-color: #fff; /* Fundo do submenu */
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Coloca o submenu acima do restante */
+}
+
+.nav-list li:hover .dropdown {
+    display: block; /* Mostra o submenu ao passar o mouse */
+}
+
+/* Estilos da seção Sobre Mim */
+#sobre {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode #sobre {
+    background-color: #444; /* Ajuste para o modo escuro */
+}
+
+#sobre h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #002366; /* Azul marinho */
+}
+
+#sobre p {
+    color: #002366; /* Azul marinho */
+}
+
+/* Estilos do carrossel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .carousel {
+    background-color: #444; /* Fundo do carrossel no modo escuro */
+}
+
+.carousel .slides {
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+}
+
+.carousel .slide {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel button:hover {
+    background-color: #555;
+}
+
+/* Estilos da seção de contato */
+#contato {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+body.dark-mode #contato {
+    background-color: #444; /* Fundo da seção de contato no modo escuro */
+}
+
+#contato h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #002366; /* Azul marinho */
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contato label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #002366; /* Azul marinho */
+}
+
+#contato input,
+#contato textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #002366; /* Azul marinho */
+}
+
+/* Estilos do rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #002366; /* Azul marinho */
+}
+
+/* Adicionando responsividade */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #contato,
+    #sobre,
+    .carousel {
+        padding: 15px;
+    }
+
+    .carousel .slides {
+        width: 100%;
+    }
+
+    /* Menu hamburguer */
     .nav-list {
         display: none; /* Esconde a lista de navegação em telas pequenas */
         flex-direction: column;
         position: absolute;
         top: 60px; /* Altura do navbar */
         left: 0;
-        background-color: #002366;
+        background-color: #fff; /* Fundo do menu */
         width: 100%;
         padding: 10px 0;
-    }
-
-    .nav-list.active {
-        display: flex; /* Mostra a lista quando o menu hamburguer é clicado */
-    }
-
-    .menu-toggle {
-        display: flex; /* Mostra o botão de menu hamburguer */
-    }
-
-    /* Mostrar submenu em dispositivos móveis ao clicar no item pai */
-    .nav-list li.active .dropdown {
-        display: block; /* Mostrar submenu ao clicar no item pai */
-        position: static; /* Para que o submenu apareça corretamente em telas pequenas */
-    }
-}
-
-.carousel {
-    position: relative;
-    width: 80%;
-    margin: 2rem auto;
-}
-
-.slides {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-}
-
-.slide {
-    width: 100%;
-    transition: transform 0.5s ease;
-}
-
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-footer {
-    background-color: var(--footer-bg-color);
-    color: var(--footer-text-color);
-    padding: 1rem;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-/* Botão para alternar o tema */
-#toggle-theme {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--submit-bg-color);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#toggle-theme:hover {
-    background-color: var(--submit-hover-bg-color);
-}
+        z-index: 
