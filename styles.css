@@ -1,3 +1,72 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #002366; /* Azul marinho */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Tema escuro */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4; /* Cor clara no modo escuro */
+}
+
+/* Inputs e Textareas no modo escuro */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #555;
+    color: #f4f4f4;
+    border: 1px solid #888; /* Borda mais clara */
+}
+
+body.dark-mode button {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
+/* Estilos para o botão de tema */
+#toggle-theme {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#toggle-theme:hover {
+    background-color: #555;
+}
+
+/* Estilos do cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #002366; /* Azul marinho */
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #002366; /* Azul marinho */
+}
+
 /* Estilos do menu de navegação */
 .navbar {
     display: flex;
@@ -5,7 +74,6 @@
     align-items: center;
     padding: 10px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .menu-toggle {
@@ -26,7 +94,6 @@
     list-style: none;
     display: flex;
     gap: 20px;
-    transition: max-height 0.3s ease; /* Efeito de transição */
 }
 
 .nav-list li {
@@ -36,13 +103,6 @@
 .nav-list li a {
     color: #002366; /* Azul marinho */
     text-decoration: none;
-    padding: 10px 15px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s; /* Transição suave */
-}
-
-.nav-list li a:hover {
-    background-color: #e6e6e6; /* Cor de fundo ao passar o mouse */
 }
 
 /* Estilos do submenu (cascata) */
@@ -57,25 +117,141 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 10; /* Coloca o submenu acima do restante */
-    transition: opacity 0.3s ease; /* Efeito de transição para opacidade */
 }
 
 .nav-list li:hover .dropdown {
     display: block; /* Mostra o submenu ao passar o mouse */
 }
 
-/* Estilos do submenu ao passar o mouse */
-.dropdown li a {
-    padding: 10px 20px; /* Espaçamento interno */
+/* Estilos da seção Sobre Mim */
+#sobre {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode #sobre {
+    background-color: #444; /* Ajuste para o modo escuro */
+}
+
+#sobre h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
     color: #002366; /* Azul marinho */
 }
 
-.dropdown li a:hover {
-    background-color: #f4f4f4; /* Cor de fundo ao passar o mouse no submenu */
+#sobre p {
+    color: #002366; /* Azul marinho */
+}
+
+/* Estilos do carrossel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .carousel {
+    background-color: #444; /* Fundo do carrossel no modo escuro */
+}
+
+.carousel .slides {
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+}
+
+.carousel .slide {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel button:hover {
+    background-color: #555;
+}
+
+/* Estilos da seção de contato */
+#contato {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+body.dark-mode #contato {
+    background-color: #444; /* Fundo da seção de contato no modo escuro */
+}
+
+#contato h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #002366; /* Azul marinho */
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contato label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #002366; /* Azul marinho */
+}
+
+#contato input,
+#contato textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #002366; /* Azul marinho */
+}
+
+/* Estilos do rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #002366; /* Azul marinho */
 }
 
 /* Adicionando responsividade */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #contato,
+    #sobre,
+    .carousel {
+        padding: 15px;
+    }
+
+    .carousel .slides {
+        width: 100%;
+    }
+
+    /* Menu hamburguer */
     .nav-list {
         display: none; /* Esconde a lista de navegação em telas pequenas */
         flex-direction: column;
@@ -85,15 +261,4 @@
         background-color: #fff; /* Fundo do menu */
         width: 100%;
         padding: 10px 0;
-        z-index: 999; /* Garante que o menu fique acima de outros elementos */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para o menu */
-    }
-
-    .menu-toggle {
-        display: flex; /* Mostra o menu hamburguer em telas pequenas */
-    }
-
-    .nav-list.show {
-        display: flex; /* Mostra a lista de navegação quando ativa */
-    }
-}
+        z-index:
