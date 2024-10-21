@@ -36,6 +36,7 @@
     z-index: 10; /* Coloca o submenu acima do restante */
 }
 
+/* Exibe o submenu ao passar o mouse */
 .nav-list li:hover .dropdown {
     display: block; /* Mostra o submenu ao passar o mouse */
 }
@@ -74,13 +75,9 @@
         display: flex; /* Mostra o botão de menu hamburguer */
     }
 
-    /* Permitir o uso do submenu em dispositivos móveis */
-    .nav-list li:hover .dropdown {
+    /* Mostrar submenu em dispositivos móveis ao clicar no item pai */
+    .nav-list li.active .dropdown {
         display: block; /* Mostrar submenu ao clicar no item pai */
-    }
-
-    .dropdown {
         position: static; /* Para que o submenu apareça corretamente em telas pequenas */
-        padding: 0; /* Remove o preenchimento para um layout mais limpo */
     }
 }
