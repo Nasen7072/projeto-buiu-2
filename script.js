@@ -44,3 +44,14 @@ if (toggleThemeButton) {
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     });
 }
+
+// Código existente...
+
+// Adiciona funcionalidade ao menu hamburguer
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+
+mobileMenu.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
+
