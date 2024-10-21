@@ -33,7 +33,7 @@
     list-style: none;
     padding: 10px 0;
     border-radius: 5px;
-    z-index: 1; /* Coloca o submenu acima do restante */
+    z-index: 10; /* Coloca o submenu acima do restante */
 }
 
 .nav-list li:hover .dropdown {
@@ -72,5 +72,17 @@
 
     .menu-toggle {
         display: flex; /* Mostra o botão de menu hamburguer */
+    }
+}
+
+/* Animação de transição do menu hamburguer */
+.nav-list.active {
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Ocultar submenu em telas pequenas */
+@media (max-width: 768px) {
+    .nav-list li:hover .dropdown {
+        display: none; /* Desativa a exibição do submenu em telas pequenas */
     }
 }
