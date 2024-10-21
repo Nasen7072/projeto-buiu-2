@@ -1,3 +1,65 @@
+/* Tema Claro (padrão) */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg-color: #3b5998;
+    --header-text-color: white;
+    --button-bg-color: rgba(0, 0, 0, 0.5);
+    --button-text-color: white;
+    --submit-bg-color: #3b5998;
+    --submit-hover-bg-color: #2a4271;
+    --footer-bg-color: #333;
+    --footer-text-color: white;
+}
+
+/* Tema Escuro */
+body.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: #eaeaea;
+    --header-bg-color: #222;
+    --header-text-color: #f4f4f4;
+    --button-bg-color: rgba(255, 255, 255, 0.5);
+    --button-text-color: black;
+    --submit-bg-color: #444;
+    --submit-hover-bg-color: #666;
+    --footer-bg-color: #111;
+    --footer-text-color: #f4f4f4;
+}
+
+/* Estilo Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
 /* Estilos do menu de navegação */
 .navbar {
     display: flex;
@@ -36,7 +98,6 @@
     z-index: 10; /* Coloca o submenu acima do restante */
 }
 
-/* Exibe o submenu ao passar o mouse */
 .nav-list li:hover .dropdown {
     display: block; /* Mostra o submenu ao passar o mouse */
 }
@@ -80,4 +141,65 @@
         display: block; /* Mostrar submenu ao clicar no item pai */
         position: static; /* Para que o submenu apareça corretamente em telas pequenas */
     }
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.slides {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Botão para alternar o tema */
+#toggle-theme {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--submit-bg-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#toggle-theme:hover {
+    background-color: var(--submit-hover-bg-color);
 }
