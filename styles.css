@@ -1,38 +1,173 @@
-body {
-    font-family: Arial, sans-serif;
+/* Estilos globais */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-header {
-    background-color: #1E3A5F; /* Azul Marinho */
-    color: white;
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
     padding: 20px;
-    text-align: center;
 }
 
-section {
-    background-color: #1E3A5F; /* Azul Marinho */
-    color: white;
-    padding: 20px;
-    margin: 10px;
+/* Tema escuro (adicionaremos funcionalidade no script.js) */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
 }
 
-footer {
-    background-color: #1A2530; /* Azul Marinho mais escuro */
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-button {
-    background-color: #007BFF; /* Azul */
-    color: white;
+/* Estilos para o botão de tema */
+#toggle-theme {
+    background-color: #333;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-button:hover {
-    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+#toggle-theme:hover {
+    background-color: #555;
+}
+
+/* Estilos do cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Estilos da seção Sobre Mim */
+#sobre {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#sobre h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Estilos do carrossel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel .slides {
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+}
+
+.carousel .slide {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel button:hover {
+    background-color: #555;
+}
+
+/* Estilos da seção de contato */
+#contato {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#contato h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contato label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contato input,
+#contato textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#contato button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contato button:hover {
+    background-color: #555;
+}
+
+/* Estilos do rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #666;
+}
+
+/* Adicionando responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #contato,
+    #sobre,
+    .carousel {
+        padding: 15px;
+    }
+
+    .carousel .slides {
+        width: 100%;
+    }
 }
