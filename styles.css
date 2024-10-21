@@ -13,10 +13,27 @@ body {
     padding: 20px;
 }
 
-/* Tema escuro (adicionaremos funcionalidade no script.js) */
+/* Tema escuro */
 body.dark-mode {
     background-color: #333;
     color: #f4f4f4; /* Cor clara no modo escuro */
+}
+
+/* Inputs e Textareas no modo escuro */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #555;
+    color: #f4f4f4;
+    border: 1px solid #888; /* Borda mais clara */
+}
+
+body.dark-mode button {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
 }
 
 /* Estilos para o botão de tema */
@@ -59,6 +76,10 @@ header p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode #sobre {
+    background-color: #444; /* Ajuste para o modo escuro */
+}
+
 #sobre h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
@@ -79,6 +100,10 @@ header p {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .carousel {
+    background-color: #444; /* Fundo do carrossel no modo escuro */
 }
 
 .carousel .slides {
@@ -114,6 +139,10 @@ header p {
     margin-bottom: 20px;
 }
 
+body.dark-mode #contato {
+    background-color: #444; /* Fundo da seção de contato no modo escuro */
+}
+
 #contato h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
@@ -139,19 +168,6 @@ header p {
     border: 1px solid #ccc;
     font-size: 1rem;
     color: #002366; /* Azul marinho */
-}
-
-#contato button {
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#contato button:hover {
-    background-color: #555;
 }
 
 /* Estilos do rodapé */
