@@ -22,3 +22,12 @@ navItems.forEach(item => {
         if (dropdown) dropdown.style.display = 'none';
     });
 });
+
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+}
