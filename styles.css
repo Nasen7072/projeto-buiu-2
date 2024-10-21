@@ -107,7 +107,7 @@ header p {
 
 /* Estilos da seção de contato */
 #contato {
-    background-color: #11114e;
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -138,6 +138,7 @@ header p {
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    color: #002366; /* Azul marinho */
 }
 
 #contato button {
