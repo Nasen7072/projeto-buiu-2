@@ -73,16 +73,14 @@
     .menu-toggle {
         display: flex; /* Mostra o botão de menu hamburguer */
     }
-}
 
-/* Animação de transição do menu hamburguer */
-.nav-list.active {
-    transition: max-height 0.3s ease-in-out;
-}
-
-/* Ocultar submenu em telas pequenas */
-@media (max-width: 768px) {
+    /* Permitir o uso do submenu em dispositivos móveis */
     .nav-list li:hover .dropdown {
-        display: none; /* Desativa a exibição do submenu em telas pequenas */
+        display: block; /* Mostrar submenu ao clicar no item pai */
+    }
+
+    .dropdown {
+        position: static; /* Para que o submenu apareça corretamente em telas pequenas */
+        padding: 0; /* Remove o preenchimento para um layout mais limpo */
     }
 }
